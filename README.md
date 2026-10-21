@@ -1,148 +1,225 @@
-Bloom & Co. Florist — Inventory Management System
+Bloom & Co. Florist
 
-Aplikasi manajemen inventaris bunga berbasis web yang dikembangkan menggunakan Laravel 12 dan MySQL. Proyek ini merupakan pengembangan dari sistem inventaris pada tugas P4 yang dimigrasikan ke framework Laravel untuk memenuhi tugas P5.
+Inventory Management System
 
-📌 Deskripsi Proyek
+Aplikasi Manajemen Inventaris Bunga Berbasis Web dengan Laravel 12
 
-Bloom & Co. Florist Inventory Management System merupakan aplikasi yang digunakan untuk mengelola data bunga, kategori, persediaan barang, serta transaksi barang masuk dan barang keluar.
+---
 
-Aplikasi ini dikembangkan untuk membantu proses pengelolaan inventaris menjadi lebih terstruktur, memudahkan pemantauan stok, dan menyediakan pencatatan riwayat transaksi persediaan.
+📌 1. Deskripsi Proyek
 
-Proyek ini juga menerapkan autentikasi pengguna dan pembagian hak akses berdasarkan role, yaitu Admin dan Owner.
+Bloom & Co. Florist Inventory Management System adalah aplikasi berbasis web untuk mengelola inventaris bunga, mulai dari pengelolaan data produk, kategori bunga, pencatatan barang masuk dan barang keluar, hingga pemantauan riwayat transaksi stok.
 
-🎯 Tujuan
+Proyek ini merupakan pengembangan dari sistem inventaris pada tugas P4 yang dimigrasikan ke framework Laravel 12 sebagai bagian dari tugas P5.
 
-- Memigrasikan sistem inventaris dari proyek P4 ke Laravel.
-- Menerapkan konsep MVC (Model-View-Controller).
+Aplikasi ini dirancang untuk membantu pengelolaan persediaan menjadi lebih terstruktur, efisien, dan mudah dipantau.
+
+---
+
+🎯 2. Tujuan Pengembangan
+
+- Memigrasikan aplikasi inventaris P4 ke framework Laravel.
+- Menerapkan arsitektur MVC (Model-View-Controller).
 - Mengimplementasikan database migration, seeder, dan Eloquent ORM.
 - Menerapkan relasi antartabel menggunakan Eloquent.
-- Menyediakan fitur CRUD, pencarian, filter, sorting, dan pagination.
-- Mengimplementasikan validasi input dan pencatatan transaksi stok.
-- Menerapkan autentikasi dan pembatasan hak akses pengguna.
+- Mengimplementasikan fitur CRUD (Create, Read, Update, Delete).
+- Menyediakan pencarian, filter, sorting, pagination, dan validasi input.
+- Menerapkan autentikasi serta pembagian hak akses pengguna.
 
-✨ Fitur Aplikasi
+---
 
-1. Authentication
+✨ 3. Fitur Aplikasi
+
+3.1. Authentication
 
 - Login dan logout pengguna.
 - Autentikasi menggunakan Laravel.
-- Pembagian hak akses Admin dan Owner.
+- Pembagian role pengguna menjadi Admin dan Owner.
 
-2. Dashboard
+3.2. Dashboard
 
-- Menampilkan jumlah produk.
-- Menampilkan jumlah kategori.
-- Menampilkan total persediaan.
+- Menampilkan jumlah produk dan kategori.
+- Menampilkan total persediaan bunga.
 - Menampilkan produk dengan stok menipis.
 - Menampilkan transaksi stok terbaru.
 
-3. Manajemen Data Bunga
+3.3. Manajemen Data Bunga
 
-- Menampilkan daftar bunga.
-- Menambahkan produk bunga.
-- Mengedit data produk.
-- Menghapus produk sesuai ketentuan sistem.
+- Menampilkan daftar produk bunga.
+- Menambahkan, mengedit, dan menghapus data produk.
 - Menampilkan detail produk.
 - Mencari produk berdasarkan nama atau SKU.
 - Memfilter produk berdasarkan kategori.
-- Mengurutkan data berdasarkan nama, harga, atau stok.
-- Pagination untuk daftar produk.
+- Mengurutkan produk berdasarkan nama, harga, atau stok.
+- Menampilkan data menggunakan pagination.
 
-4. Manajemen Kategori
+3.4. Manajemen Kategori
 
 - Menambahkan kategori bunga.
 - Menampilkan daftar kategori.
 - Mengedit kategori.
-- Menghapus kategori yang tidak sedang digunakan oleh produk.
+- Menghapus kategori yang tidak sedang digunakan.
 
-5. Manajemen Stok
+3.5. Manajemen Stok
 
 - Mencatat transaksi barang masuk.
 - Mencatat transaksi barang keluar.
-- Memperbarui jumlah stok secara otomatis.
-- Memvalidasi ketersediaan stok sebelum barang keluar.
-- Menyimpan riwayat transaksi stok.
+- Memperbarui stok secara otomatis.
+- Memvalidasi jumlah stok sebelum barang keluar.
+- Menyimpan riwayat transaksi persediaan.
 
-6. Histori Transaksi
+3.6. Histori Transaksi
 
-- Menampilkan riwayat barang masuk dan keluar.
-- Menampilkan tanggal transaksi, produk, jumlah, dan petugas.
-- Memfilter transaksi berdasarkan jenisnya.
+- Menampilkan riwayat barang masuk dan barang keluar.
+- Menampilkan informasi produk, jumlah, tanggal, dan petugas.
+- Memfilter histori berdasarkan jenis transaksi.
 
-7. Role-Based Access Control
+---
 
-Admin
+👥 4. Pembagian Hak Akses
 
-- Mengakses dashboard.
-- Melihat dan mengelola data bunga.
-- Mengelola kategori.
-- Mencatat barang masuk dan barang keluar.
-- Melihat histori transaksi.
+Fitur| Admin| Owner
+Melihat dashboard| ✅| ✅
+Melihat data bunga| ✅| ✅
+Melihat detail bunga| ✅| ✅
+Menambah produk| ✅| ❌
+Mengedit dan menghapus produk| ✅| ❌
+Mengelola kategori| ✅| ❌
+Mencatat barang masuk| ✅| ❌
+Mencatat barang keluar| ✅| ❌
+Melihat histori stok| ✅| ✅
 
-Owner
+Pembatasan akses diterapkan melalui middleware Laravel dan pengaturan route berdasarkan role pengguna.
 
-- Melihat dashboard.
-- Melihat data dan detail bunga.
-- Melihat histori transaksi stok.
+---
 
-🛠️ Teknologi yang Digunakan
+🛠️ 5. Teknologi yang Digunakan
 
-- Backend: PHP dan Laravel 12
-- Database: MySQL
-- Frontend: HTML dan CSS
-- Template Engine: Blade
-- ORM: Eloquent ORM
-- Development Tools: Visual Studio Code, Composer, dan XAMPP
-- Version Control: Git dan GitHub
+Teknologi| Kegunaan
+PHP| Bahasa pemrograman backend
+Laravel 12| Framework aplikasi web
+MySQL| Sistem manajemen basis data
+HTML| Struktur halaman web
+CSS| Tampilan dan desain antarmuka
+Blade| Template engine Laravel
+Eloquent ORM| Pengelolaan data dan relasi database
+Composer| Manajemen dependensi PHP
+XAMPP| Lingkungan pengembangan lokal
+Visual Studio Code| Editor kode
+Git & GitHub| Version control dan penyimpanan repository
 
-🗃️ Database
+---
 
-Database yang digunakan untuk versi Laravel ini bernama "inventory_db".
+🗃️ 6. Struktur Database
 
-Tabel utama yang digunakan:
+Database aplikasi Laravel menggunakan nama "inventory_db".
 
-Tabel| Fungsi
+Nama Tabel| Fungsi
 "users"| Menyimpan data pengguna dan role
 "categories"| Menyimpan kategori bunga
-"products"| Menyimpan data produk dan stok
+"products"| Menyimpan data produk, harga, SKU, dan stok
 "stock_transactions"| Menyimpan transaksi barang masuk dan keluar
 
-Relasi database meliputi:
+Relasi Antartabel
 
-- Kategori memiliki banyak produk (one-to-many).
-- Produk memiliki banyak transaksi stok (one-to-many).
-- Pengguna dapat memiliki banyak catatan transaksi stok (one-to-many).
+- Categories — Products: satu kategori dapat memiliki banyak produk.
+- Products — Stock Transactions: satu produk dapat memiliki banyak transaksi stok.
+- Users — Stock Transactions: satu pengguna dapat mencatat banyak transaksi stok.
 
-⚙️ Instalasi dan Menjalankan Aplikasi
+---
 
-Prasyarat
+📂 7. Struktur Folder Proyek
+
+inventory-laravel/
+│
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── AuthController.php
+│   │   │   ├── DashboardController.php
+│   │   │   ├── CategoryController.php
+│   │   │   ├── ProductController.php
+│   │   │   └── StockTransactionController.php
+│   │   │
+│   │   └── Middleware/
+│   │       └── RoleMiddleware.php
+│   │
+│   └── Models/
+│       ├── User.php
+│       ├── Category.php
+│       ├── Product.php
+│       └── StockTransaction.php
+│
+├── bootstrap/
+│   └── app.php
+│
+├── database/
+│   ├── migrations/
+│   └── seeders/
+│       └── DatabaseSeeder.php
+│
+├── resources/
+│   └── views/
+│       ├── auth/
+│       │   └── login.blade.php
+│       ├── categories/
+│       │   ├── index.blade.php
+│       │   ├── create.blade.php
+│       │   └── edit.blade.php
+│       ├── layouts/
+│       │   └── app.blade.php
+│       ├── products/
+│       │   ├── index.blade.php
+│       │   ├── create.blade.php
+│       │   ├── edit.blade.php
+│       │   ├── show.blade.php
+│       │   └── _form.blade.php
+│       ├── stock/
+│       │   ├── index.blade.php
+│       │   └── create.blade.php
+│       └── dashboard.blade.php
+│
+├── routes/
+│   └── web.php
+│
+├── .env.example
+├── artisan
+├── composer.json
+├── composer.lock
+└── README.md
+
+Catatan: Struktur di atas merupakan gambaran file utama aplikasi. Folder dan file bawaan Laravel lainnya tetap dipertahankan.
+
+---
+
+⚙️ 8. Instalasi dan Menjalankan Aplikasi
+
+Persyaratan
 
 Pastikan perangkat telah memiliki:
 
-- PHP yang memenuhi persyaratan Laravel 12.
+- PHP yang kompatibel dengan Laravel 12.
 - Composer.
 - MySQL atau XAMPP.
 - Git.
 
-1. Clone Repository
+Langkah 1 — Clone Repository
 
-git clone https://github.com/USERNAME/REPOSITORY.git
+git clone https://github.com/firdaf35/mini-project4-inventory-laravel.git
 
-Ganti "USERNAME/REPOSITORY" dengan alamat repository GitHub milikmu.
+Langkah 2 — Masuk ke Folder Proyek
 
-2. Masuk ke Folder Project
+cd mini-project4-inventory-laravel
 
-cd inventory-laravel
-
-3. Instal Dependensi
+Langkah 3 — Instal Dependensi
 
 composer install
 
-4. Konfigurasi Environment
+Langkah 4 — Konfigurasi Environment
 
-Salin file ".env.example" menjadi ".env", kemudian sesuaikan konfigurasi database.
+Salin ".env.example" menjadi ".env", lalu sesuaikan konfigurasi database di file ".env".
 
-Contoh konfigurasi untuk MySQL lokal:
+Contoh konfigurasi lokal:
 
 APP_NAME="Bloom & Co. Florist"
 APP_ENV=local
@@ -156,89 +233,77 @@ DB_DATABASE=inventory_db
 DB_USERNAME=root
 DB_PASSWORD=
 
-Sesuaikan nama database, username, dan password dengan konfigurasi MySQL milikmu.
+Sesuaikan nilai konfigurasi dengan lingkungan MySQL yang digunakan.
 
-5. Generate Application Key
+Langkah 5 — Generate Application Key
 
 php artisan key:generate
 
-6. Jalankan Migration dan Seeder
+Langkah 6 — Migrasi Database dan Seeder
+
+Buat database "inventory_db" terlebih dahulu melalui phpMyAdmin, kemudian jalankan:
 
 php artisan migrate --seed
 
-Perintah ini membuat tabel database dan mengisi data contoh melalui seeder. Gunakan database pengembangan yang masih kosong agar tidak mengganggu data yang sudah ada.
+Perintah ini membuat tabel sesuai migration dan memasukkan data awal melalui seeder.
 
-7. Jalankan Aplikasi
+Penting: Gunakan database pengembangan yang sesuai. Jangan menjalankan "migrate:fresh" pada database yang berisi data penting.
+
+Langkah 7 — Jalankan Server
 
 php artisan serve
 
-Buka browser dan akses:
+Buka aplikasi melalui browser:
 
 http://127.0.0.1:8000
 
-🔐 Akun Demo
+---
 
-Akun berikut dibuat melalui database seeder untuk pengujian lokal.
+🔐 9. Akun Demo
+
+Akun berikut disediakan melalui database seeder untuk pengujian aplikasi di lingkungan lokal.
 
 Role| Email| Password
 Admin| "admin@bloomco.test"| "password123"
 Owner| "owner@bloomco.test"| "password123"
 
-Catatan: Akun tersebut merupakan akun demo untuk lingkungan pengembangan. Jangan gunakan kredensial contoh ini untuk aplikasi produksi.
+«Catatan keamanan: Akun dan password di atas hanya untuk pengujian lokal. Jangan gunakan kredensial demo sebagai akun produksi.»
 
-📁 Struktur Project
+---
 
-inventory-laravel/
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   └── Middleware/
-│   └── Models/
-├── bootstrap/
-│   └── app.php
-├── database/
-│   ├── migrations/
-│   └── seeders/
-├── resources/
-│   └── views/
-│       ├── auth/
-│       ├── categories/
-│       ├── layouts/
-│       ├── products/
-│       ├── stock/
-│       └── dashboard.blade.php
-├── routes/
-│   └── web.php
-├── .env.example
-├── artisan
-├── composer.json
-└── README.md
+📚 10. Konsep Laravel yang Diterapkan
 
-📚 Implementasi Laravel
+Konsep| Implementasi
+Migration| Mengelola struktur tabel database
+Seeder| Mengisi data awal dan akun demo
+Model| Merepresentasikan entitas aplikasi
+Eloquent ORM| Mengakses database dan mengatur relasi
+Controller| Menangani logika aplikasi
+Blade| Menampilkan halaman web
+Middleware| Membatasi akses berdasarkan autentikasi dan role
+Validation| Memvalidasi data dari pengguna
+Pagination| Membagi daftar data ke beberapa halaman
+Routing| Mengatur endpoint dan navigasi aplikasi
 
-Dalam proyek ini, beberapa konsep Laravel yang diterapkan meliputi:
+---
 
-- Migration: Mengelola struktur tabel database melalui kode.
-- Seeder: Mengisi data awal dan akun demo.
-- Model: Merepresentasikan data dan relasi antartabel.
-- Eloquent ORM: Mempermudah operasi database.
-- Controller: Mengatur logika aplikasi dan alur data.
-- Blade: Menampilkan antarmuka aplikasi.
-- Middleware: Melindungi halaman berdasarkan autentikasi dan role.
-- Validation: Memvalidasi input pengguna.
-- Pagination: Membagi data menjadi beberapa halaman.
+👩‍💻 11. Identitas Proyek
 
-👩‍💻 Pengembangan
+Informasi| Keterangan
+Nama Proyek| Bloom & Co. Florist — Inventory Management System
+Jenis Proyek| Aplikasi inventaris berbasis web
+Tugas| P5 — Migrasi Sistem Inventaris ke Laravel
+Tugas Sebelumnya| P4 — Sistem Inventaris
+Program Studi| Sistem Informasi
+Nama Pengembang| [Isi nama kamu]
+Universitas| [Isi nama universitas]
 
-Proyek ini dikembangkan sebagai bagian dari tugas mata kuliah untuk menerapkan framework Laravel pada sistem informasi inventaris.
+---
 
-Nama Proyek: Bloom & Co. Florist — Inventory Management System
-Mata Kuliah: [Isi nama mata kuliah]
-Tugas: P5 — Migrasi Sistem Inventaris ke Laravel
-Nama: [Isi nama kamu]
-Program Studi: Sistem Informasi
-Universitas: [Isi nama universitas]
+📄 12. Penutup
 
-📄 Lisensi
+Bloom & Co. Florist Inventory Management System dikembangkan sebagai implementasi pembelajaran pengembangan aplikasi web menggunakan Laravel. Melalui proyek ini, konsep MVC, pengelolaan database, relasi Eloquent, CRUD, validasi, autentikasi, dan middleware diterapkan dalam sistem inventaris yang terintegrasi.
 
-Proyek ini dikembangkan untuk keperluan pembelajaran dan tugas akademik.
+---
+
+Developed for academic purposes — Bloom & Co. Florist
