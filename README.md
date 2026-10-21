@@ -229,8 +229,8 @@ Akun demo berikut dibuat melalui seeder untuk pengujian lokal.
 | Tugas | P5 — Migrasi Sistem Inventaris ke Laravel |
 | Proyek sebelumnya | P4 — Sistem Inventaris |
 | Program Studi | Sistem Informasi |
-| Nama pengembang | *Isi nama kamu* |
-| Universitas | *Isi nama universitas* |
+| Nama | *Firda Fina* |
+| NIM | *250180035* |
 
 ## 📄 12. Penutup
 
